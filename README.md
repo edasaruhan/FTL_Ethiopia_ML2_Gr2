@@ -1,6 +1,6 @@
 ﻿# FTL_Ethiopia_ML2_Gr2
 
-Group 2 Capstone project
+Group 2 | FTL Ethiopia ML2 Capstone
 
 ## Project Proposal: AirSense - AI-Powered Air Quality Monitoring & Forecasting
 
@@ -19,5 +19,5 @@ We will use the **Beijing Multi-Site Air-Quality Data Set** from Kaggle. The dat
 
 Dataset link: [Beijing Multi-Site Air-Quality Data Set](https://www.kaggle.com/datasets/aravindpcoder/beijing-multi-site-air-quality-data)
 
-5. Approach (Machine Learning or Deep Learning)
+### 5. Approach (Machine Learning or Deep Learning):
 We will begin with a machine learning approach using models like Random Forest and XGBoost due to their efficiency and interpretability for structured time-series data. If needed, deep learning models like LSTM will be explored in the later stages to improve prediction accuracy.
