@@ -2,7 +2,6 @@
 
 AirSense is a Streamlit web application designed to monitor, analyze, and forecast urban air quality using machine learning. It provides actionable health alerts based on predicted pollution levels, empowering users to make informed decisions.
 
-**Developed by Manus AI.**
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-streamlit-app-url.com) <!-- Replace with actual deployment URL if available -->
 
