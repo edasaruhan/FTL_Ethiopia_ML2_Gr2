@@ -346,9 +346,13 @@ async def _run_pipeline_task(processor):
         # Find input file
         input_file = os.path.join(settings.raw_data_dir, "beijing_demo.csv")
         if not os.path.exists(input_file):
-            logger.error(f"Input file not found: {input_file}")
-            return
-        
+            alt_input_file = os.path.join(settings.data_dir, "beijing_demo.csv")
+            if os.path.exists(alt_input_file):
+                input_file = alt_input_file
+            else:
+                logger.error(f"Input file not found: {input_file}")
+                return
+
         # Generate output path
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         output_path = os.path.join(settings.processed_data_dir, f"processed_{timestamp}.parquet")

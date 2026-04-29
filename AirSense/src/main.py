@@ -29,9 +29,13 @@ def run_pipeline():
         # Find input file
         input_file = Path(settings.raw_data_dir) / "beijing_demo.csv"
         if not input_file.exists():
-            logger.error(f"Input file not found: {input_file}")
-            return False
-        
+            alt_input_file = Path(settings.data_dir) / "beijing_demo.csv"
+            if alt_input_file.exists():
+                input_file = alt_input_file
+            else:
+                logger.error(f"Input file not found: {input_file}")
+                return False
+
         # Generate output path
         from datetime import datetime
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
