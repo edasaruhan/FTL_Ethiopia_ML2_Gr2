@@ -8,7 +8,7 @@ from typing import List, Optional
 # Third-party imports
 import numpy as np
 import pandas as pd
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, Request
 
 # Local imports
 from ..core.config import get_settings
@@ -33,10 +33,8 @@ logger = get_logger(__name__)
 router = APIRouter()
 
 # Dependency to get app state
-async def get_forecaster():
+async def get_forecaster(request: Request):
     """Get forecaster from app state."""
-    from fastapi import Request
-    request = Request({"type": "http"})
     app = request.app
     
     if not hasattr(app.state, 'forecaster'):
@@ -44,10 +42,8 @@ async def get_forecaster():
     
     return app.state.forecaster
 
-async def get_data_processor():
+async def get_data_processor(request: Request):
     """Get data processor from app state."""
-    from fastapi import Request
-    request = Request({"type": "http"})
     app = request.app
     
     if not hasattr(app.state, 'data_processor'):
